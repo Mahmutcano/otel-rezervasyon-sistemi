@@ -1,52 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import React from "react";
+import HotelsType from "../HotelsType";
+import StepCard from "../StepCard";
 
-const RoomDetail = (props) => {
-  const [data, setData] = useState(
-    JSON.parse(localStorage.getItem("userData"))
-  );
-
-  useEffect(() => {
-    setData(data);
-  }, []);
-  console.log(data);
-
+const RoomDetail = () => {
   return (
-    <div className="grid sm:flex p-10 m-10 bg-hotel-brand-color rounded-3xl">
-      <div className="w-full flex-1">
-        <div className="mt-3 h-6 text-xs font-bold leading-8 text-hotel-color">
-          Otel
-        </div>
-        <div className="flex rounded">{data.otelSearch}</div>
+    <div className="grid grid-cols-1 gap-1 p-10 border-1">
+      <div className="shadow-lg text-green-500 text-lg font-bold text-end rounded-lg col-span-3">
+        <StepCard />
       </div>
-
-      <div className="lex rounded">
-        <AiOutlineArrowRight />
+      <div className="shadow-lg text-hotel-color text-lg font-bold text-center rounded-lg col-span-3">
+        <HotelsType />
       </div>
-
-      <div className="w-full flex-1">
-        <div className="mt-3 h-6 text-xs font-bold leading-8 text-hotel-color">
-          Giriş
-        </div>
-        <div className="flex mx-2 rounded">{data.startDate}</div>
-      </div>
-      <div className="flex rounded">
-        <AiOutlineArrowRight />
-      </div>
-      <div className="w-full flex-1">
-        <div className="mt-3 h-6 text-xs font-bold leading-8 text-hotel-color">
-          Çıkış
-        </div>
-        <div className="flex mx-2  rounded">{data.finalDate}</div>
-      </div>
-      <div className="flex rounded">
-        <AiOutlineArrowRight />
-      </div>
-      <div className="w-full flex-1">
-        <div className="mt-3 h-6 text-xs font-bold leading-8 text-hotel-color">
-          Yetişkin
-        </div>
-        <div className="flex mx-4  rounded">{data.adult}</div>
+      <div className="shadow-lg text-hotel-color text-lg font-bold text-center rounded-lg col-span-3">
+        <HotelsType />
       </div>
     </div>
   );
