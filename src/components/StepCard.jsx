@@ -65,7 +65,7 @@ const StepCard = () => {
           <div className="mt-2 mb-3 h-6 text-xs text-start font-bold leading-8 text-hotel-color">
             Yetişkin
           </div>
-          <div className="shadow-md bg-white p-2 w-20 text-center flex justify-center  rounded-xl">
+          <div className="shadow-md bg-white p-2 w-14 text-center flex justify-center  rounded-xl">
             {data.adult}
           </div>
         </div>
@@ -73,7 +73,7 @@ const StepCard = () => {
           <div className="mt-2 mb-3 h-6 text-xs text-start font-bold leading-8 text-hotel-color">
             Çocuk
           </div>
-          <div className="shadow-md bg-white p-2 w-20 text-center flex justify-center  rounded-xl">
+          <div className="shadow-md bg-white p-2 w-14 text-center flex justify-center  rounded-xl">
             {(data.child = "" ? "0" : data.child)}
           </div>
         </div>
