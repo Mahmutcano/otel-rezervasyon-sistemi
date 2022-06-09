@@ -38,11 +38,11 @@ const Main = () => {
   return (
     <div className="md:w-1/2 mx-auto shadow-xl rounded-2xl pb-2 bg-hotel-color">
       {/* Stepper */}
-      <div className="container horizontal mt-10">
+      <div className="container horizontal mt-5">
         <Stepper steps={steps} currenStep={currenStep} />
 
         {/* Display Components */}
-        <div className="my-10 py-10">
+        <div className="py-5">
           <UseContextProvider>{displayStep(currenStep)}</UseContextProvider>
         </div>
       </div>

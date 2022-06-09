@@ -12,7 +12,6 @@ const Search = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
 
-//   console.log(hotelData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,15 +27,21 @@ const Search = () => {
         <div className="my-2  rounded border border-gray-200 bg-white p-1">
           <select
             onChange={handleChange}
-            value={userData["otelSearch"] || ""}
+            value={userData["otelSearch"]}
             name="otelSearch"
             placeholder="Otel Ara"
             className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
             type="text"
+            required
           >
             {hotelData.map((item) => (
-              <option key={item.id} className="w-full p-5 px-2 text-gray-800 outline-none">
-                {item.hotel_name}
+              <option
+                key={item.id}
+                required
+                className="w-full p-5 px-2 text-gray-800 outline-none"
+                value={item.hotel_name && item.id }
+              >
+                 {item.hotel_name}
               </option>
             ))}
           </select>

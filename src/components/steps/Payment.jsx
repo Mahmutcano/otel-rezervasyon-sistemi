@@ -25,6 +25,7 @@ const Payment = () => {
               </div>
               <img
                 src="https://img.icons8.com/offices/80/000000/sim-card-chip.png"
+                alt="res"
                 width="48"
               />
             </div>
@@ -32,7 +33,7 @@ const Payment = () => {
         </div>
       </div>
       <PriceCard />
-      <div class="shadow-lg  bg-hotel-color text-hotel-brand-color text-lg font-bold p-10 rounded-lg">
+      <div className="shadow-lg  bg-hotel-color text-hotel-brand-color text-lg font-bold p-10 rounded-lg">
         <CreditForm />
       </div>
     </div>

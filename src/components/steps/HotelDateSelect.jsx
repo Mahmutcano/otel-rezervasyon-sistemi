@@ -5,13 +5,14 @@ import Search from "../Search";
 const HotelDateSelect = () => {
   const { userData, setUserData } = useStepperContext();
   const handleChange = (e) => {
+
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
   return (
     <>
       <Search />
-      <div className="grid sm:flex p-10 m-10 bg-hotel-brand-color rounded-3xl">
+      <form className="grid sm:flex p-10 m-10 bg-hotel-brand-color rounded-3xl">
         <div className="mx-2 w-full flex-1">
           <div className="mt-3 h-6 text-xs font-bold leading-8 text-hotel-color">
             Giriş Tarihi
@@ -25,6 +26,7 @@ const HotelDateSelect = () => {
               placeholder="Gün/Ay/Yıl"
               min="01-01-2022"
               max="31-12-2023"
+              required
               onFocus={(e) => (e.target.type = "date")}
               onBlur={(e) => (e.target.type = "text")}
             />
@@ -38,7 +40,7 @@ const HotelDateSelect = () => {
             <input
               onChange={handleChange}
               value={
-                userData["finalDate"] > userData["startDate"]
+                userData[("finalDate")] > userData["startDate"]
                   ? userData["finalDate"]
                   : "" || ""
               }
@@ -48,6 +50,7 @@ const HotelDateSelect = () => {
               placeholder="Gün/Ay/Yıl"
               min="01-01-2022"
               max="31-12-2023"
+              required
               onFocus={(e) => (e.target.type = "date")}
               onBlur={(e) => (e.target.type = "text")}
             />
@@ -60,7 +63,7 @@ const HotelDateSelect = () => {
           <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
             <input
               onChange={handleChange}
-              value={userData["adult"] >= 0 ? userData["adult"] : ""}
+              value={userData["adult"] >= 0 && userData["adult"] < 10 ? userData["adult"] : ""}
               name="adult"
               type="number"
               className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
@@ -87,7 +90,7 @@ const HotelDateSelect = () => {
             />
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };
